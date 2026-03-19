@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+ char key;
+ while (1){
+  double a, b, c;
+  double d, x1, x2;
+  printf("a:");
+  scanf("%lf", &a);
+  printf("b:");
+  scanf("%lf", &b);
+  printf("c:");
+  scanf("%lf", &c);
+  d = (b*b) - (4*a*c);
+  if(d>0){
+	x1 = (-b + d*0.5)/(2*a);
+	x2 = (-b - d*0.5)/(2*a);
+	printf("D: d = %f ", d);
+	printf("Root: x1 = %f, x2 = %f\n", x1, x2);
+  }
+  else if (d == 0){
+	x1 = (-b + d*0.5)/(2*a);
+	printf("D: d = %f ", d);
+	printf("Root: x1 = %f", x1);
+  } 
+  else{
+	printf("D: d = %f ", d);
+    printf("NO ROOTS");
+  } 
+  printf("Want to leave?\n");
+  key = getchar();
+  if (key == 's'){
+   break;
+  }
+  else{
+   
+  }
+ }
+ return 0;
+}
