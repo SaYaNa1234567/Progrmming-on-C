@@ -1,0 +1,3 @@
+int perimetr(int a, int b, int c);
+int sush(int a, int b, int c);
+int ploshad(int a, int b, int c);
