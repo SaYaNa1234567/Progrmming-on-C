@@ -79,25 +79,25 @@ int main() {
 	fgets(input, sizeof(input), stdin);
 	input[strcspn(input, "\n")] = 0;
 	int i;
-	if (strcmp(input, "now") == 0){
-		localT();
-	}
 	int dots = 0;
         for (i = 0; input[i]; i++) {
             if (input[i] == '.') dots++;
         }
-    //printf("Найдено точек: %d\n", dots);
-	if (dots == 2){
+	if (strcmp(input, "now") == 0){
+		localT();
+	}
+    //printf("ГЌГ Г©Г¤ГҐГ­Г® ГІГ®Г·ГҐГЄ: %d\n", dots);
+	else if (dots == 2){
 		sscanf(input, "%d.%d.%d", &year, &month, &day);
 		int weekday = WEEKSDAY(year, month, day);
 		printDWeek(weekday);
 	}
-	if(dots == 1){
+	else if(dots == 1){
 		sscanf(input, "%d.%d", &year, &month);
 		printMONTH(year, month);
 	}
 	
-	if (dots == 0){
+	else if (dots == 0){
 		sscanf(input, "%d", &year);
 		printYEARCAL(year);
 	}
